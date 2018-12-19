@@ -1,0 +1,78 @@
+<html xmlns:th="http://www.thymeleaf.org"   xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+
+    <!-- site specific styling -->
+    <style>
+
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
+        body {
+            font: 12px "Myriad Pro", "Lucida Grande", sans-serif;
+            text-align: center;
+            /* Margin bottom by footer height */
+            margin-bottom: 60px;
+        }
+
+        /*页脚*/
+        .footer{
+            background-color:#CCCCCC;
+            color:white;
+            width:100%;
+            height:30px;
+            position:absolute;
+            bottom:0;
+            left:0;
+        }
+
+        @media (max-width: 1105px) {
+            #navbar-right {
+                display: none;
+            }
+        }
+
+        @media (max-width: 961px) {
+            #navbar-left {
+                display: none;
+            }
+        }
+
+        /*导航栏搜索框*/
+        .search a:link, a:visited {
+            text-decoration:none;  /*超链接无下划线*/
+            color: #009A61;
+        }
+
+        .search {
+            color: #cccccc;
+        }
+
+        .search a:hover {
+            color: #0088CF;
+        }
+        .container-fluid {
+            width: 80%;
+            margin: 0 auto;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="/resources/js/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/resources/css/video.css" rel="stylesheet"/>
+    <!-- for video tag based installs flowplayer depends on jQuery 1.7.2+ -->
+    <script src="/resources/webjars/jquery/3.2.1/jquery.min.js"></script>
+    <!-- include flowplayer -->
+    <script src="/resources/player/flowplayer-3.2.8.min.js"></script>
+    <!--include bootstrap3-->
+    <script src="/resources/js/bootstrap.min.js"></script>
+</head>
+<body th:inline="text">
+
+    <div th:replace="/video/header::header"></div>
+    <!-- the player-->
+    <div layout:fragment="content" id="content" style="width: 80%; margin: 0 auto;padding-bottom: 50px"></div>
+    <div th:replace="/video/footer::footer"></div>
+
+</body>
+</html>

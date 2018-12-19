@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ph.itsw.video.dao.VideoMapper">
+    <select id="getVideoById" resultMap="videoMap" parameterType="int">
+      select
+       video_id,
+       video_name,
+       video_intro,
+       video_edittime,
+       video_islive,
+       video_url,
+       video_oriurl,
+       video_thumbnailurl,
+       video_remark,
+       category_id,
+       videostate_id
+      from video where video_id=#{id}
+    </select>
+
+    <select id="getVideoCategoryById" parameterType="int" resultMap="videoCategoryMap">
+      select
+       v.video_id,
+       v.video_name,
+       v.video_intro,
+       v.video_edittime,
+       v.video_islive,
+       v.video_url,
+       v.video_oriurl,
+       v.video_thumbnailurl,
+       v.video_remark,
+       v.videostate_id,
+       c.category_id,
+       c.category_name,
+       c.category_parentid,
+       c.category_remark
+      from video v
+      inner join category c on v.category_id = c.category_id
+      where v.video_id = #{id}
+    </select>
+
+    <select id="getVideoByOrder" parameterType="int" resultMap="videoVideoStateMap">
+      select
+       v.video_id,
+       v.video_name,
+       v.video_intro,
+       v.video_edittime,
+       v.video_islive,
+       v.video_url,
+       v.video_oriurl,
+       v.video_thumbnailurl,
+       v.video_remark,
+       v.category_id,
+       v.videostate_id,
+       c.videostate_order,
+       c.videostate_cssstyle,
+       c.videostate_name,
+       c.videostate_remark
+      from video v
+      inner join videostate c on v.videostate_id = c.videostate_id
+      where c.videostate_order = #{order}
+    </select>
+    
+    <update id="updateVideoByVideo" parameterType="Video">
+        update video
+        set
+        <if test="thumbnailurl != null">video_thumbnailurl=#{thumbnailurl},</if>
+        <if test="videoState != null">videostate_id=#{videoState.id}</if>
+        where video_id=#{id}
+    </update>
+
+    <resultMap id="videoMap" type="Video">
+        <id property="id" column="video_id"/>
+        <result property="name" column="video_name"/>
+        <result property="intro" column="video_intro"/>
+        <result property="edittime" column="video_edittime" jdbcType="TIMESTAMP"/>
+        <result property="islive" column="video_islive"/>
+        <result property="url" column="video_url"/>
+        <result property="oriurl" column="video_oriurl"/>
+        <result property="thumbnailurl" column="video_thumbnailurl"/>
+        <result property="remark" column="video_remark"/>
+        <result property="category.id" column="category_id"/>
+        <result property="videoState.id" column="videostate_id"/>
+    </resultMap>
+
+    <resultMap id="videoCategoryMap"  type="Video" extends="videoMap">
+        <association property="category" resultMap="com.ph.itsw.video.dao.CategoryMapper.categoryMap" javaType="Category" fetchType="lazy"/>
+    </resultMap>
+
+    <resultMap id="videoVideoStateMap" type="Video" extends="videoMap">
+        <association property="videoState" resultMap="com.ph.itsw.video.dao.VideoStateMapper.videoStateMap" javaType="VideoState" fetchType="lazy"/>
+    </resultMap>
+</mapper>

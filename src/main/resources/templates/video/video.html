@@ -1,0 +1,19 @@
+<!-- base.html -->
+<html layout:decorator="/base" xmlns:th="http://www.thymeleaf.org"  xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<body>
+<div layout:fragment="content">
+    <a id="player"  th:href="${#request.getContextPath()}+'/resources/video/1.flv'"></a>
+    <script>
+        flowplayer("player", "/resources/player/flowplayer-3.2.8.swf", {
+            clip:  {
+                autoPlay: false,       //是否自动播放，默认true
+                autoBuffering: true     //是否自动缓冲视频，默认true
+            },
+            onLoad: function() {    // 当播放器载入完成时调用
+                this.setVolume(30);    // 设置音量0-100，默认50
+            }
+        });
+    </script>
+</div>
+</body>
+</html>

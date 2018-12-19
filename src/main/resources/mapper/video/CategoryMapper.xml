@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ph.itsw.video.dao.CategoryMapper">
+
+    <select id="getAllCategory" resultMap="categoryDetailMap">
+        select
+          c.category_id,
+          c.category_name,
+          c.category_parentid,
+          c.category_remark,
+          v.video_id,
+          v.video_url,
+          v.video_remark,
+          v.video_thumbnailurl,
+          v.video_islive,
+          v.video_edittime,
+          v.video_name,
+          v.video_intro
+        from category c
+        inner join video v on c.category_id = v.category_id
+    </select>
+
+    <resultMap id="categoryMap" type="Category">
+        <id property="id" column="category_id"/>
+        <result property="name" column="category_name"/>
+        <result property="parentid" column="category_parentid"/>
+        <result property="remark" column="category_remark"/>
+    </resultMap>
+
+    <resultMap id="categoryDetailMap" type="Category" extends="categoryMap">
+        <collection property="videos" resultMap="com.ph.itsw.video.dao.VideoMapper.videoMap"/>
+    </resultMap>
+</mapper>

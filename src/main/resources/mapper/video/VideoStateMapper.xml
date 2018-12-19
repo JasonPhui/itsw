@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ph.itsw.video.dao.VideoStateMapper">
+
+    <select id="getVideoStateByOrder" resultMap="videoStateMap" parameterType="int">
+        select
+          videostate_id,
+          videostate_order,
+          videostate_name,
+          videostate_cssstyle,
+          videostate_remark
+          from videostate
+          where videostate_order=#{order}
+    </select>
+
+    <resultMap id="videoStateMap" type="VideoState">
+        <result property="id" column="videostate_id"/>
+        <result property="name" column="videostate_name"/>
+        <result property="order" column="videostate_order"/>
+        <result property="cssstyle" column="videostate_cssstyle"/>
+        <result property="remark" column="videostate_remark"/>
+    </resultMap>
+</mapper>

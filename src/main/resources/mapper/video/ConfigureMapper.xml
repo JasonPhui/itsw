@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ph.itsw.video.dao.ConfigureMapper">
+
+    <select id="getConfigure" resultMap="configureMap" parameterType="String">
+        select
+          configure_id,
+          configure_name,
+          configure_val,
+          configure_remark
+        from configure
+        where configure_name=#{name}
+    </select>
+    <resultMap id="configureMap" type="Configure">
+        <id property="id" column="configure_id"/>
+        <result property="name" column="configure_name"/>
+        <result property="val" column="configure_val"/>
+        <result property="remark" column="configure_remark"/>
+    </resultMap>
+</mapper>
