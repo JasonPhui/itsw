@@ -87,7 +87,7 @@ a {
   top: 1.2em;
   height: 0.5em;
   width: 0.5em;
-  background: #265a88;
+  background: #009a61;
   border-radius: 50%;
 }
 
@@ -128,7 +128,7 @@ a {
 
 .title {
   padding-left: 3em;
-  color: #265a88;
+  color: #009a61;
   float: left;
   height: 100%;
 }
