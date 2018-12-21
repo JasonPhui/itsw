@@ -255,9 +255,9 @@ a {
 }
 
 #video-list-header .video-banner .video-thumbnail:hover, .video-thumbnail:focus {
-  -webkit-box-shadow:0 0 1px 1px #009a61;
-  -moz-box-shadow:0 0 1px 1px #009a61;
-  box-shadow:0 0 1px 1px #009a61;
+    -webkit-box-shadow:0 0 1px 1px #009a61;
+    -moz-box-shadow:0 0 1px 1px #009a61;
+    box-shadow:0 0 1px 1px #009a61;
 }
 
 .video-thumbnail {
@@ -267,7 +267,7 @@ a {
   margin-bottom: 0;
   line-height: 1.42857143;
   background-color: #fff;
-
+  cursor: pointer;
   -webkit-transition: border .2s ease-in-out;
   -o-transition: border .2s ease-in-out;
   transition: border .2s ease-in-out;
