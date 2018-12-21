@@ -421,3 +421,12 @@ a {
   float: right !important;
 }
 
+/*视频详情页面*/
+
+.video-breadcrumb {
+    padding: 0 0;
+    list-style: none;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
