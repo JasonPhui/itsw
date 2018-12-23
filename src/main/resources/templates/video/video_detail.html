@@ -82,86 +82,166 @@
                 </div>
                 <ul class="nav nav-tabs mb20">
                     <li class="active">
-                        <a href="#speaker-info">目录</a>
+                        <a id="intro">课程介绍</a>
                     </li>
                     <li>
-                        <a href="#content-into">笔记</a>
+                        <a id="node">笔记</a>
                     </li>
                     <li>
-                        <a href="#users-evaluation">用户评价 (2)</a>
+                        <a id="evaluation">用户评价 (2)</a>
                     </li>
                 </ul>
-                <div class="live__intro-block" id="speaker-info" style="text-align: left">
-                    <h4 class="live__intro-block-title mb20">讲师信息</h4>
-                    <div class="live__intro-block-detail live__intro-block-detail--speaker">
-                        <div class="live__speaker-info">
-                            <img class="live__speaker-avatar" src="https://avatar-static.segmentfault.com/357/746/3577469296-59aebb8e34152_big64">
-                            <div class="live__speaker-meta">
-                                <strong class="live__speaker-name"><a href="/u/kaige">凯威的讲堂</a></strong>
+                <div id="video-detail">
+                    <div class="live__intro-block mb20" id="speaker-info" style="text-align: left">
+                        <h4 class="live__intro-block-title mb20">讲师信息</h4>
+                        <div class="live__intro-block-detail live__intro-block-detail--speaker">
+                            <div class="live__speaker-info">
+                                <img class="live__speaker-avatar" src="https://avatar-static.segmentfault.com/357/746/3577469296-59aebb8e34152_big64">
+                                <div class="live__speaker-meta">
+                                    <strong class="live__speaker-name"><a href="/u/kaige">凯威的讲堂</a></strong>
+                                </div>
+                            </div>
+                            <div class="mt10 ">
+                                <p>凯威老师毕业于北京大学，先后就职于百度、Amazon、粉笔网。 曾管理数十人团队，负责百度外卖Rank&amp;推荐系统、亚马逊全球物流等千万量级产品。擅长高并发高稳定性后端系统开发，向学生深入浅出传授核心技术。</p>
                             </div>
                         </div>
-                        <div class="mt10 ">
-                            <p>凯威老师毕业于北京大学，先后就职于百度、Amazon、粉笔网。 曾管理数十人团队，负责百度外卖Rank&amp;推荐系统、亚马逊全球物流等千万量级产品。擅长高并发高稳定性后端系统开发，向学生深入浅出传授核心技术。</p>
+                    </div>
+                    <div class="live__intro-block mb20" id="content-into" style="text-align: left">
+                        <h4 class="live__intro-block-title">内容简介</h4>
+                        <div class="live__intro-block-detail">
+                            <div class="fmt">
+                                <p>Python,  作为TIOBE排名第4的语言，作为超越PHP的语言，作为万能的胶水语言，作为机器学习的标配语言，如果你还没掌握它，欢迎来听凯威老师教你学Python。Python教程很多，文档也很多，但能做到如此系统，如此工程化思路的极少。与市面上的Python课程不同的是，凯威老师会把工程实战中的方方面面都融入到课程里，简单的如CRUD，高级一点的AutoComplete。这些工程问题怎么去拆解，怎么拿Python去实现，凯威老师都会深入浅出地讲解。</p>
+                                <h4>内容包括：</h4>
+                                <ul>
+                                    <li>凯威教你学 Python（一）：Python 的变量和源代码机制</li>
+                                    <li>凯威教你学 Python（二）：Python的字符串和列表</li>
+                                    <li>凯威教你学 Python（三）：Python的控制语句</li>
+                                    <li>凯威教你学 Python（四）：Python的函数</li>
+                                    <li>凯威教你学 Python（五）：Python的单元测试</li>
+                                    <li>凯威教你学 Python（六）：Python的常用数据结构</li>
+                                    <li>凯威教你学 Python（七）：Python中的面向对象</li>
+                                    <li>凯威教你学 Python（八）：Python异常处理</li>
+                                    <li>凯威教你学 Python（九）：Python的模块和包管理</li>
+                                    <li>凯威教你学 Python（十）：Python的文件IO</li>
+                                    <li>凯威教你学 Python（十一）：Python的函数式编程</li>
+                                    <li>凯威教你学 Python（十二）：Python静态博客实践</li>
+                                </ul>
+                                <h4>适宜人群</h4>
+                                <ul>
+                                    <li>对编程有兴趣的同学，希望通过Python入门</li>
+                                    <li>已有基础，希望掌握Python的同学</li>
+                                    <li>已经工作，需要自我提升的同学</li>
+                                </ul>
+                            </div>
+                            <hr>
                         </div>
                     </div>
                 </div>
+
             </div>
             <div class="col-md-4">
-                <div class="panel panel-default mb20" style="text-align: left">
+                <div class="panel panel-primary" style="text-align: left">
                     <div class="panel-heading">
                         <h3 class="panel-title">
-                            讲师信息
+                    课程列表
                         </h3>
                     </div>
-                    <div class="panel-body">
-                        <div class="program-recommend">
-                            <div class="live__intro-block-detail live__intro-block-detail--speaker">
-                                <div class="live__speaker-info">
-                                    <img class="live__speaker-avatar" src="https://avatar-static.segmentfault.com/344/030/3440301964-5760d1e306dfc_big64">
-                                    <div class="live__speaker-meta">
-                                        <strong class="live__speaker-name">
-                                            <a href="/u/piano">Kyrie</a>
-                                        </strong>
-                                    </div>
-                                </div>
+                    <div class="panel-body" id="course-list-detail">
+                        <div class="list-group">
+                            <a href="/ls/1650000017333471/l/1500000012682338" class="list-group-item ">
                                 <div>
-                                    <p>就职于某一线大厂，Golang项目经验丰富，不能带你飞就带你浪</p>
+                                    <h5 class="mt0 mb0">Python 入门导论</h5>
+                                    <span class="tips">32分钟 </span>
                                 </div>
-                                <div class="live__speaker-">
-
+                                <img src="/resources/images/play.png" class="pull-right" width="20" height="20">
+                            </a>
+                            <a href="/ls/1650000017333471/l/1500000016161912" class="list-group-item ">
+                                <div>
+                                    <h5 class="mt0 mb0">凯威教你学 Python（一）：Python 的变量和源代码机制</h5>
+                                    <span class="tips">57分钟</span>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel panel-default mb20" style="text-align: left">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">讲师的相关视频</h3>
-                    </div>
-                    <div class="panel-body" style="padding-bottom: 5px ">
-                        <div class="program-recommend">
-                            <div class="program-recommend-title">
-                                <a href="/l/1500000017265804" target="_blank">
-                                    <strong style="margin: 0">聊聊Raft算法</strong>
-                                </a>
-                                <span>12 人参与</span>
-                            </div>
-                        </div>
-                        <div class="program-recommend" >
-                            <div class="program-recommend-title">
-                                <a href="/l/1500000017265804" target="_blank">
-                                    <strong style="margin: 0">聊聊Raft算法</strong>
-                                </a>
-                                <span>12 人参与</span>
-                            </div>
-                        </div>
-                        <div class="program-recommend" >
-                            <div class="program-recommend-title">
-                                <a href="/l/1500000017265804" target="_blank">
-                                    <strong style="margin: 0">聊聊Raft算法</strong>
-                                </a>
-                                <span>12 人参与</span>
-                            </div>
+                                <img src="/resources/images/play.png" class="pull-right" width="20" height="20">
+                            </a>
+                            <a href="/ls/1650000017333471/l/1500000016299614" class="list-group-item ">
+                                <div>
+                                    <h5 class="mt0 mb0">凯威教你学 Python（二）：Python的字符串和列表</h5>
+                                    <span class="tips">1小时5分钟</span>
+                                </div>
+                                <img src="/resources/images/play.png" class="pull-right" width="20" height="20">
+                            </a>
+                            <a href="/ls/1650000017333471/l/1500000016371649" class="list-group-item ">
+                                <div>
+                                    <h5 class="mt0 mb0">凯威教你学 Python（三）：Python的控制语句</h5>
+                                    <span class="tips">1小时12分钟</span>
+                                </div>
+                                <img src="/resources/images/play.png" class="pull-right" width="20" height="20">
+                            </a>
+                            <a href="/ls/1650000017333471/l/1500000016456649" class="list-group-item ">
+                                <div>
+                                    <h5 class="mt0 mb0">凯威教你学 Python（四）：Python的函数</h5>
+                                    <span class="tips">1小时9分钟</span>
+                                </div>
+                                <img src="/resources/images/play.png" class="pull-right" width="20" height="20">
+                            </a>
+                            <a href="/ls/1650000017333471/l/1500000016534088" class="list-group-item ">
+                                <div>
+                                    <h5 class="mt0 mb0">凯威教你学 Python（五）：Python的单元测试</h5>
+                                    <span class="tips">1小时8分钟</span>
+                                </div>
+                                <img src="/resources/images/play.png" class="pull-right" width="20" height="20">
+                            </a>
+                            <a href="/ls/1650000017333471/l/1500000016653718" class="list-group-item ">
+                                <div>
+                                    <h5 class="mt0 mb0">凯威教你学 Python（六）：Python的常用数据结构</h5>
+                                    <span class="tips">1小时6分钟</span>
+                                </div>
+                                <img src="/resources/images/play.png" class="pull-right" width="20" height="20">
+                            </a>
+                            <a href="/ls/1650000017333471/l/1500000016729186" class="list-group-item ">
+                                <div>
+                                    <h5 class="mt0 mb0">凯威教你学 Python（七）：Python中的面向对象</h5>
+                                    <span class="tips">1小时</span>
+                                </div>
+                                <img src="/resources/images/play.png" class="pull-right" width="20" height="20">
+                            </a>
+                            <a href="/ls/1650000017333471/l/1500000016885332" class="list-group-item hidden">
+                                <div>
+                                    <h5 class="mt0 mb0">凯威教你学 Python（八）：Python异常处理</h5>
+                                    <span class="tips">41分钟</span>
+                                </div>
+                                <img src="/resources/images/play.png" class="pull-right" width="20" height="20">
+                            </a>
+                            <a href="/ls/1650000017333471/l/1500000017332138" class="list-group-item hidden">
+                                <div>
+                                    <h5 class="mt0 mb0">凯威教你学 Python（九）：Python的模块和包管理</h5>
+                                    <span class="tips">32分钟</span>
+                                </div>
+                                <img src="/resources/images/play.png" class="pull-right" width="20" height="20">
+                            </a>
+                            <a href="/ls/1650000017333471/l/1500000017332260" class="list-group-item hidden">
+                                <div>
+                                    <h5 class="mt0 mb0">凯威教你学 Python（十）：Python的文件IO</h5>
+                                    <span class="tips">25分钟</span>
+                                </div>
+                                <img src="/resources/images/play.png" class="pull-right" width="20" height="20">
+                            </a>
+                            <a href="/ls/1650000017333471/l/1500000017332399" class="list-group-item hidden">
+                                <div>
+                                    <h5 class="mt0 mb0">凯威教你学 Python（十一）：Python的函数式编程</h5>
+                                    <span class="tips">16分钟</span>
+                                </div>
+                                <img src="/resources/images/play.png" class="pull-right" width="20" height="20">
+                            </a>
+                            <a href="/ls/1650000017333471/l/1500000017332499" class="list-group-item hidden">
+                                <div>
+                                    <h5 class="mt0 mb0">凯威教你学 Python（十二）：Python静态博客实践</h5>
+                                    <span class="tips">44分钟</span>
+                                </div>
+                                <img src="/resources/images/play.png" class="pull-right" width="20" height="20">
+                            </a>
+                            <a href="javascript:;" class="list-group-item show-all">
+                                显示全部 13 节课
+                            </a>
                         </div>
                     </div>
                 </div>
